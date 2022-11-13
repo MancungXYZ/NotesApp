@@ -3,6 +3,7 @@ import { Container } from '@mui/system';
 import NoteCards from '../components/NoteCards';
 import { makeStyles } from '@mui/styles';
 import Masonry from 'react-masonry-css';
+import { Box } from '@mui/material';
 
 const useStyles = makeStyles({
   card: {
@@ -36,9 +37,9 @@ export default function Notes() {
       className="my-masonry-grid"
       columnClassName="my-masonry-grid_column">
         {notes.map(notes =>(
-          <div key={notes.id}>
+          <Box key={notes.id}>
             <NoteCards notes={notes} handleDelete={handleDelete} />
-          </div>
+          </Box>
       ))}
       </Masonry>
     </Container>

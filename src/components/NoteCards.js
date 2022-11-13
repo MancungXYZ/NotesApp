@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import { IconButton, Typography } from '@mui/material';
 import { DeleteOutlined} from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
 
 const useStyles = makeStyles({
     card: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
 export default function NoteCards({notes, handleDelete}) {
     const classes = useStyles()
   return (
-    <div>
+    <Box>
         <Card elevation={3} className={classes.card}>
             <CardHeader
             action={
@@ -35,6 +36,6 @@ export default function NoteCards({notes, handleDelete}) {
             </CardContent>
             
         </Card>
-    </div>
+    </Box>
   )
 }

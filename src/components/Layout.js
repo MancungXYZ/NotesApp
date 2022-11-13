@@ -11,8 +11,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { format} from 'date-fns';
-import LinearProgress from '@mui/material/LinearProgress';
 import Avatar from '@mui/material/Avatar';
+import { Box } from '@mui/material';
 
 
 const drawerWidth = 240
@@ -67,7 +67,7 @@ export default function Layout({children}) {
   ]
 
   return (
-    <div className={classes.root}>
+    <Box className={classes.root}>
     <AppBar
     position="fixed"
     elevation={0}
@@ -89,11 +89,11 @@ export default function Layout({children}) {
     anchor='left'
     classes={{paper: classes.drawerPaper}}
     >
-      <div>
+      <Box>
         <Typography className={classes.title}>
             Notes App
         </Typography>
-      </div>
+      </Box>
 
     <List>
       {menuItem.map(item => (
@@ -111,13 +111,13 @@ export default function Layout({children}) {
 
     </Drawer>
     
-    <div className={classes.page}>
-      <div className={classes.toolbar}></div>
+    <Box className={classes.page}>
+      <Box className={classes.toolbar}></Box>
         {children}
-      </div>
+      </Box>
 
 
-  </div>
+  </Box>
 
   )
 }
