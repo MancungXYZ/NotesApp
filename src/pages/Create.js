@@ -24,7 +24,7 @@ export default function Create() {
   const classes = useStyles()
   const history = useHistory()
   const [title, setTitle] = useState('')
-  const [detail, setDetails] = useState('')
+  const [details, setDetails] = useState('')
   const [category, setCategory] = useState('Todos')
 
   const [titleError, setTitleError] = useState(false)
@@ -37,14 +37,14 @@ export default function Create() {
     if (title == "") {
       setTitleError(true)
         }
-    if (detail == "") {
+    if (details == "") {
       setDetailsError(true)
     }    
-    if (title && detail) {
+    if (title && details) {
       fetch('http://localhost:8000/notes', {
         method: "POST",
         headers: {"Content-type": "application/json"},
-        body: JSON.stringify({title, detail, category})
+        body: JSON.stringify({title, details, category})
       }).then(() => history.push('/'))
     }
   }

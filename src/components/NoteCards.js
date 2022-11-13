@@ -17,7 +17,7 @@ export default function NoteCards({notes, handleDelete}) {
     const classes = useStyles()
   return (
     <Box>
-        <Card elevation={3} className={classes.card}>
+        <Card elevation={3}>
             <CardHeader
             action={
                 <IconButton onClick={() => handleDelete(notes.id)}>
@@ -30,9 +30,11 @@ export default function NoteCards({notes, handleDelete}) {
             
             />
             <CardContent>
+                <Box>
                 <Typography variant="body2" color="textSecondary">
                     {notes.details}
                 </Typography>
+                </Box>
             </CardContent>
             
         </Card>

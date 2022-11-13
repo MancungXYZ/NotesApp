@@ -77,9 +77,9 @@ export default function Layout({children}) {
         <Typography className={classes.date}>
           {format (new Date(), 'eeee dd MMMM Y')}
         </Typography>
-        <Typography>
+        <Box>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </Typography>
+        </Box>
       </Toolbar>
     </AppBar>
 
